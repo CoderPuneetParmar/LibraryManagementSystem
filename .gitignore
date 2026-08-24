@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# Build output
+client/dist/
+client/dist-ssr/
+server/dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+client/.env
+client/.env.*
+!client/.env.example
+server/.env
+server/.env.*
+!server/.env.example
+
+# Logs and debug output
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test and coverage output
+coverage/
+.nyc_output/
+
+# Local caches
+*.local
+.vite/
+
+# Editor files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.suo
+*.swp
+*.swo
