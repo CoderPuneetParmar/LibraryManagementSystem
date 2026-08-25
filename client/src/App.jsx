@@ -56,7 +56,7 @@ const DefaultRedirect = () => {
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <Routes>
           {/* Public Auth Routes */}
           <Route path="/login" element={<Login />} />
