@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Library, Lock, Mail, ArrowRight } from 'lucide-react';
 import Toast from '../components/Toast';
 
 const Login = () => {
@@ -36,63 +35,49 @@ const Login = () => {
       <Toast message={error} type="error" onClose={() => setError('')} />
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
-        <div className="inline-flex bg-navy p-3 rounded-2xl text-amber-400 mb-3 shadow-lg">
-          <Library className="w-10 h-10" />
-        </div>
-        <h2 className="text-3xl font-extrabold text-navy tracking-tight">Campus Library</h2>
-        <p className="mt-1 text-sm text-slate-600">Unified Academic Library Portal</p>
+        <h2 className="text-xl font-semibold text-slate-900 tracking-tight">Campus Library</h2>
+        <p className="mt-1 text-sm text-slate-500">Unified Academic Library Portal</p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow-xl sm:rounded-xl sm:px-10 border border-slate-200">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+        <div className="bg-white py-8 px-4 shadow-sm sm:rounded-md sm:px-10 border border-slate-200">
+          <form className="space-y-5" onSubmit={handleSubmit}>
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
-              <div className="relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="student@student.edu or admin@library.com"
-                  className="block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg focus:ring-navy focus:border-navy text-sm"
-                />
-              </div>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="student@student.edu or admin@library.com"
+                className="block w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-1 focus:ring-navy focus:border-navy text-sm shadow-sm"
+              />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Password</label>
-              <div className="relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
-                  className="block w-full pl-10 pr-3 py-2 border border-slate-300 rounded-lg focus:ring-navy focus:border-navy text-sm"
-                />
-              </div>
+              <input
+                type="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                className="block w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-1 focus:ring-navy focus:border-navy text-sm shadow-sm"
+              />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex justify-center items-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-semibold text-navy bg-amber-accent hover:bg-amber-600 focus:outline-none transition-colors"
+              className="w-full flex justify-center items-center py-2.5 px-4 border border-slate-300 rounded-md shadow-sm text-sm font-medium text-black bg-white hover:bg-slate-50 focus:outline-none transition-colors"
             >
               {loading ? 'Signing in...' : 'Sign In'}
-              {!loading && <ArrowRight className="ml-2 w-4 h-4" />}
             </button>
           </form>
 
           <div className="mt-6 text-center text-sm">
             <span className="text-slate-600">Don't have a member account? </span>
-            <Link to="/register" className="font-semibold text-navy hover:underline">
+            <Link to="/register" className="font-medium text-navy hover:underline">
               Register here
             </Link>
           </div>
